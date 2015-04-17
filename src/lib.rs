@@ -1,4 +1,24 @@
+#![deny(missing_docs)]
 
+//! # Edit distance
+//!
+//! The Levenshtein edit distance between two strings is the number of
+//! individual single-character changes (insert, delete, substitute)
+//! necessary for string `a` to change it into `b`.
+
+/// This can be a helpful way to order search results or fuzzy
+/// auto-completion.
+///
+/// The runtime complexity is O(m*n), where m and n are the strings'
+/// length.
+///
+/// # Examples
+///
+/// ```
+/// use edit_distance::edit_distance;
+///
+/// edit_distance("kitten", "sitting"); // => 3
+/// ```
 pub fn edit_distance(a: &str, b: &str) -> i32 {
 
     let row: Vec<i32> = vec![0; b.len() + 1];
