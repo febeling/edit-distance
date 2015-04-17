@@ -51,14 +51,3 @@ pub fn edit_distance(a: &str, b: &str) -> i32 {
 
     matrix[a.len()][b.len()]
 }
-
-#[cfg(test)]
-mod test {
-    use super::edit_distance;
-
-    #[test]
-    fn simple() {
-        assert_eq!(edit_distance("kitten", "sitting"), 3);
-        assert_eq!(edit_distance("Tier", "Tor"), 2);
-    }
-}
