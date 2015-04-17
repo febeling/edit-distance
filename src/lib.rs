@@ -30,7 +30,7 @@ pub fn edit_distance(a: &str, b: &str) -> i32 {
         }
     }
 
-    return matrix[a.len()][b.len()];
+    matrix[a.len()][b.len()]
 }
 
 #[cfg(test)]
