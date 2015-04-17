@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/febeling/edit-distance.svg)](https://travis-ci.org/febeling/edit-distance)
+
 # Project Name
 
 Calculate Levenshtein distance between two strings.
