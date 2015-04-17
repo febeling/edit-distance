@@ -38,15 +38,14 @@ pub fn edit_distance(a: &str, b: &str) -> i32 {
     for (i, ca) in a.char_indices() {
         for (j, cb) in b.char_indices() {
 
-            let mut alternatives = [
+            let alternatives = [
                 // deletion
                 matrix[i][j+1] + 1,
                 // insertion
                 matrix[i+1][j] + 1,
                 // match or substitution
                 matrix[i][j] + if ca == cb { 0 } else { 1 }];
-            alternatives.sort();
-            matrix[i+1][j+1] = *alternatives.first().unwrap();
+            matrix[i+1][j+1] = *alternatives.iter().min().unwrap();
         }
     }
 
