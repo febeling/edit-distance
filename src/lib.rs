@@ -23,7 +23,7 @@ pub fn edit_distance(a: &str, b: &str) -> i32 {
                 matrix[i][j+1] + 1,
                 // insertion
                 matrix[i+1][j] + 1,
-                // match or substituion
+                // match or substitution
                 matrix[i][j] + if ca == cb { 0 } else { 1 }];
             alternatives.sort();
             matrix[i+1][j+1] = *alternatives.first().unwrap();
