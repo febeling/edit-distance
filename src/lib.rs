@@ -38,10 +38,8 @@ pub fn edit_distance(a: &str, b: &str) -> i32 {
     }
 
     // calculate matrix
-    let mut i = 0;
-    let mut j = 0;
-    for ca in a.chars() {
-        for cb in b.chars() {
+    for (i, ca) in a.chars().enumerate() {
+        for (j, cb) in b.chars().enumerate() {
             let alternatives = [
                 // deletion
                 matrix[i][j+1] + 1,
@@ -50,10 +48,7 @@ pub fn edit_distance(a: &str, b: &str) -> i32 {
                 // match or substitution
                 matrix[i][j] + if ca == cb { 0 } else { 1 }];
             matrix[i+1][j+1] = *alternatives.iter().min().unwrap();
-            j = j + 1;
         }
-        j = 0;
-        i = i + 1;
     }
 
     matrix[len_a][len_b]
