@@ -25,3 +25,19 @@ fn empty_b() {
 fn empty_both() {
     assert_eq!(edit_distance::edit_distance("", ""), 0);
 }
+
+#[test]
+fn unicode_misc() {
+    assert_eq!(edit_distance::edit_distance("üö", "uo"), 2);
+}
+
+#[test]
+fn unicode_thai() {
+    assert_eq!(edit_distance::edit_distance("ฎ ฏ ฐ", "a b c"), 3);
+}
+
+#[test]
+fn unicode_misc_equal() {
+    assert_eq!(edit_distance::edit_distance("☀☂☃☄", "☀☂☃☄"), 0);
+}
+
