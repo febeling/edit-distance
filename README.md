@@ -11,7 +11,7 @@ correction, fuzzy completion and similar use cases.
 
 In Cargo.toml add
 
-```
+```toml
 [dependencies]
 edit-distance = "0.0.1"
 ```
@@ -21,7 +21,7 @@ the code.
 
 ## Usage
 
-```
+```rust
 extern crate edit_distance;
 
 edit_distance("kitten", "sitting"); // => 3
