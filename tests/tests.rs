@@ -70,3 +70,18 @@ fn at_most_length_of_longer_property() {
 
     quickcheck(at_most_size_of_longer as fn(a: String, b: String) -> bool);
 }
+
+#[test]
+fn zero_iff_a_equals_b_property() {
+    fn zero_iff_a_equals_b(a: String, b: String) -> bool {
+        let d = edit_distance::edit_distance(&a, &b);
+
+        if a == b {
+            d == 0
+        } else {
+            d > 0
+        }
+    }
+
+    quickcheck(zero_iff_a_equals_b as fn(a: String, b: String) -> bool);
+}
