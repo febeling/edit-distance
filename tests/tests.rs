@@ -85,3 +85,14 @@ fn zero_iff_a_equals_b_property() {
 
     quickcheck(zero_iff_a_equals_b as fn(a: String, b: String) -> bool);
 }
+
+#[test]
+fn triangle_inequality_property() {
+    fn triangle_inequality(a: String, b: String, c: String) -> bool {
+        edit_distance::edit_distance(&a, &b) <=
+            edit_distance::edit_distance(&a, &c) +
+            edit_distance::edit_distance(&b, &c)
+    }
+
+    quickcheck(triangle_inequality as fn(a: String, b: String, c: String) -> bool);
+}
