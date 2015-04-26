@@ -56,3 +56,17 @@ fn at_least_size_difference_property() {
 
     quickcheck(at_least_size_difference as fn(a: String, b: String) -> bool);
 }
+
+#[test]
+fn at_most_length_of_longer_property() {
+    fn at_most_size_of_longer(a: String, b: String) -> bool {
+        let upper_bound = *[a.chars().count(),
+                            b.chars().count()]
+            .iter()
+            .max()
+            .unwrap() as i32;
+        edit_distance::edit_distance(&a, &b) <= upper_bound
+    }
+
+    quickcheck(at_most_size_of_longer as fn(a: String, b: String) -> bool);
+}
