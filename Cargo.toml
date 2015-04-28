@@ -2,3 +2,5 @@
 name = "edit-distance"
 version = "0.0.1"
 authors = ["Florian Ebeling <florian.ebeling@gmail.com>"]
+[dev-dependencies]
+quickcheck = "*"
