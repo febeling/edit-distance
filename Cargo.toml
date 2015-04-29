@@ -1,6 +1,7 @@
 [package]
 name = "edit-distance"
-version = "0.0.1"
+version = "1.0.0"
 authors = ["Florian Ebeling <florian.ebeling@gmail.com>"]
+
 [dev-dependencies]
 quickcheck = "*"
