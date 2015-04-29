@@ -4,8 +4,11 @@
 
 Calculate Levenshtein distance between two strings.
 
-The edit distance of Levenshtein distance is helpful for spelling
-correction, fuzzy completion and similar use cases.
+The Levenshtein edit distance is a measure for the similarity between
+two strings. It's helpful for spelling correction, fuzzy completion,
+type-ahead and similar use cases.
+
+This implementation supports Unicode.
 
 ## Installation
 
@@ -13,7 +16,7 @@ In Cargo.toml add
 
 ```toml
 [dependencies]
-edit-distance = "0.0.1"
+edit-distance = "^1.0.0"
 ```
 
 Then re-run `cargo build`. That fetches the dependencies and builds
@@ -37,6 +40,7 @@ edit_distance("kitten", "sitting"); // => 3
 
 ## History
 
+2015-04-30 1.0.0 Release
 2015-04-18 0.0.1 Initial publication
 
 ## Credits
