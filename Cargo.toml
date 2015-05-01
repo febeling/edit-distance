@@ -3,5 +3,14 @@ name = "edit-distance"
 version = "1.0.0"
 authors = ["Florian Ebeling <florian.ebeling@gmail.com>"]
 
+description = "Levenshtein edit distance between strings, a measure for similarity."
+repository = "https://github.com/febeling/edit-distance"
+documentation = "http://edit-distance.github.io/febeling/edit-distance"
+readme = "README.md"
+keywords = ["text-processing"]
+
+license = "APL 2.0"
+license-file = "LICENSE"
+
 [dev-dependencies]
 quickcheck = "*"
