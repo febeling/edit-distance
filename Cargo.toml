@@ -10,7 +10,6 @@ readme = "README.md"
 keywords = ["text-processing"]
 
 license = "APL 2.0"
-license-file = "LICENSE"
 
 [dev-dependencies]
 quickcheck = "*"
