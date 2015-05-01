@@ -2,15 +2,24 @@
 
 //! # Edit distance
 //!
-//! The Levenshtein edit distance between two strings is the number of
-//! individual single-character changes (insert, delete, substitute)
-//! necessary for string `a` to change it into `b`.
+//! The [Levenshtein edit distance][wikipedia] between two strings is
+//! the number of individual single-character changes (insert, delete,
+//! substitute) necessary to change string `a` into `b`.
+//!
+//! This can be a used to order search results, for fuzzy
+//! auto-completion, and to find candidates for spelling correction.
+//!
+//! ## References
+//! [Wikipedia: Levenshtein distance][wikipedia]  
+//! [NIST: Levenshtein distance][nist]
+//!
+//! [wikipedia]: http://en.wikipedia.org/wiki/Levenshtein_distance
+//! [nist]: http://xlinux.nist.gov/dads/HTML/Levenshtein.html
 
-/// This can be a helpful way to order search results or fuzzy
-/// auto-completion.
+/// Returns the edit distance between strings `a` and `b`.
 ///
-/// The runtime complexity is O(m*n), where m and n are the strings'
-/// length.
+/// The runtime complexity is `O(m*n)`, where `m` and `n` are the
+/// strings' lengths.
 ///
 /// # Examples
 ///
