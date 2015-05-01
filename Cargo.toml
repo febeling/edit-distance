@@ -7,7 +7,7 @@ description = "Levenshtein edit distance between strings, a measure for similari
 repository = "https://github.com/febeling/edit-distance"
 documentation = "http://febeling.github.io/edit-distance/edit_distance/"
 readme = "README.md"
-keywords = ["text-processing"]
+keywords = ["text-processing", "search", "spelling"]
 
 license = "APL 2.0"
 
