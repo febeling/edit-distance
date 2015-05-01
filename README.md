@@ -40,8 +40,8 @@ edit_distance("kitten", "sitting"); // => 3
 
 ## History
 
-2015-04-30 1.0.0 Release
-2015-04-18 0.0.1 Initial publication
+2015-05-01 1.0.0 Release  
+2015-04-18 0.0.1 Initial upload
 
 ## Credits
 
