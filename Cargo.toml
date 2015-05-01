@@ -9,7 +9,7 @@ documentation = "http://febeling.github.io/edit-distance/edit_distance/"
 readme = "README.md"
 keywords = ["text-processing", "search", "spelling"]
 
-license = "APL 2.0"
+license = "Apache-2.0"
 
 [dev-dependencies]
 quickcheck = "*"
