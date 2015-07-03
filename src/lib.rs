@@ -29,21 +29,20 @@
 /// edit_distance("kitten", "sitting"); // => 3
 /// ```
 pub fn edit_distance(a: &str, b: &str) -> i32 {
-
     let len_a = a.chars().count();
     let len_b = b.chars().count();
 
-    let row: Vec<i32> = vec![0; len_b + 1];
-    let mut matrix: Vec<Vec<i32>> = vec![row; len_a + 1];
+    let len_row = len_b + 1;
+    let mut matrix: Vec<i32> = vec![0; len_row * (len_a + 1)];
 
     // initialize string a
     for i in (0..len_a) {
-        matrix[i+1][0] = matrix[i][0] + 1;
+        matrix[(i+1) * len_row] = matrix[i * len_row] + 1;
     }
 
     // initialize string b
     for i in (0..len_b) {
-        matrix[0][i+1] = matrix[0][i] + 1;
+        matrix[i+1] = matrix[i] + 1;
     }
 
     // calculate matrix
@@ -51,14 +50,14 @@ pub fn edit_distance(a: &str, b: &str) -> i32 {
         for (j, cb) in b.chars().enumerate() {
             let alternatives = [
                 // deletion
-                matrix[i][j+1] + 1,
+                matrix[i*len_row + j+1] + 1,
                 // insertion
-                matrix[i+1][j] + 1,
+                matrix[(i+1) * len_row + j] + 1,
                 // match or substitution
-                matrix[i][j] + if ca == cb { 0 } else { 1 }];
-            matrix[i+1][j+1] = *alternatives.iter().min().unwrap();
+                matrix[i*len_row +j] + if ca == cb { 0 } else { 1 }];
+            matrix[(i+1) * len_row + j+1] = *alternatives.iter().min().unwrap();
         }
     }
 
-    matrix[len_a][len_b]
+    matrix[len_a*len_row + len_b]
 }
