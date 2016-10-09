@@ -52,14 +52,13 @@ pub fn edit_distance(a: &str, b: &str) -> i32 {
         // get first column for this row
         cur[0] = (i as i32) + 1;
         for (j, cb) in b.chars().enumerate() {
-            let alternatives = [
+            cur[j + 1] = std::cmp::min(
                 // deletion
-                pre[j+1] + 1,
+                pre[j + 1] + 1, std::cmp::min(
                 // insertion
                 cur[j] + 1,
                 // match or substitution
-                pre[j] + if ca == cb { 0 } else { 1 }];
-            cur[j+1] = *alternatives.iter().min().unwrap();
+                pre[j] + if ca == cb { 0 } else { 1 }));
         }
         std::mem::swap(&mut cur, &mut pre);
     }
