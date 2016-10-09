@@ -30,6 +30,13 @@
 /// ```
 pub fn edit_distance(a: &str, b: &str) -> i32 {
 
+    // handle special case of 0 length
+    if a.len() == 0 {
+        return b.chars().count() as i32
+    } else if b.len() == 0 {
+        return a.chars().count() as i32
+    }
+
     let len_b = b.chars().count() + 1;
 
     let mut pre = vec![0; len_b];
