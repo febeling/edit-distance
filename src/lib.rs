@@ -37,12 +37,12 @@ pub fn edit_distance(a: &str, b: &str) -> i32 {
     let mut matrix: Vec<Vec<i32>> = vec![row; len_a + 1];
 
     // initialize string a
-    for i in (0..len_a) {
+    for i in 0..len_a {
         matrix[i+1][0] = matrix[i][0] + 1;
     }
 
     // initialize string b
-    for i in (0..len_b) {
+    for i in 0..len_b {
         matrix[0][i+1] = matrix[0][i] + 1;
     }
 
