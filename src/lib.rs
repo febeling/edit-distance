@@ -28,13 +28,13 @@
 ///
 /// edit_distance("kitten", "sitting"); // => 3
 /// ```
-pub fn edit_distance(a: &str, b: &str) -> i32 {
+pub fn edit_distance(a: &str, b: &str) -> usize {
 
     let len_a = a.chars().count();
     let len_b = b.chars().count();
 
-    let row: Vec<i32> = vec![0; len_b + 1];
-    let mut matrix: Vec<Vec<i32>> = vec![row; len_a + 1];
+    let row: Vec<usize> = vec![0; len_b + 1];
+    let mut matrix: Vec<Vec<usize>> = vec![row; len_a + 1];
 
     // initialize string a
     for i in 0..len_a {

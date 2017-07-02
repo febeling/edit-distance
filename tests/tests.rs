@@ -47,10 +47,13 @@ use quickcheck::quickcheck;
 #[test]
 fn at_least_size_difference_property() {
     fn at_least_size_difference(a: String, b: String) -> bool {
-        let size_a = a.chars().count() as i32;
-        let size_b = b.chars().count() as i32;
-        let diff = (size_a - size_b).abs();
-
+        let size_a = a.chars().count();
+        let size_b = b.chars().count();
+        let diff = if size_a > size_b {
+          size_a - size_b
+        } else {
+          size_b - size_a
+        };
         edit_distance::edit_distance(&a, &b) >= diff
     }
 
@@ -64,7 +67,7 @@ fn at_most_length_of_longer_property() {
                             b.chars().count()]
             .iter()
             .max()
-            .unwrap() as i32;
+            .unwrap();
         edit_distance::edit_distance(&a, &b) <= upper_bound
     }
 
