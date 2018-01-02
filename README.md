@@ -18,7 +18,7 @@ In Cargo.toml add
 
 ```toml
 [dependencies]
-edit-distance = "^1.0.0"
+edit-distance = "2.0.0"
 ```
 
 Then re-run `cargo build`. That fetches the dependencies and builds
@@ -42,6 +42,7 @@ edit_distance("kitten", "sitting"); // => 3
 
 ## History
 
+2017-07-02 2.0.0  
 2015-05-01 1.0.0 Release  
 2015-04-18 0.0.1 Initial upload
 
