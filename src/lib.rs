@@ -41,7 +41,7 @@ pub fn edit_distance(a: &str, b: &str) -> usize {
         return len_a
     }
 
-    let len_b = b.chars().count() + 1;
+    let len_b = len_b + 1;
 
     let mut pre;
     let mut tmp;
