@@ -29,36 +29,45 @@
 /// edit_distance("kitten", "sitting"); // => 3
 /// ```
 pub fn edit_distance(a: &str, b: &str) -> usize {
-
     let len_a = a.chars().count();
     let len_b = b.chars().count();
-
-    let row: Vec<usize> = vec![0; len_b + 1];
-    let mut matrix: Vec<Vec<usize>> = vec![row; len_a + 1];
-
-    // initialize string a
-    for i in 0..len_a {
-        matrix[i+1][0] = matrix[i][0] + 1;
+    if len_a < len_b{
+        return edit_distance(b, a)
     }
+    // handle special case of 0 length
+    if len_a == 0 {
+        return len_b
+    } else if len_b == 0 {
+        return len_a
+    }
+
+    let len_b = len_b + 1;
+
+    let mut pre;
+    let mut tmp;
+    let mut cur = vec![0; len_b];
 
     // initialize string b
-    for i in 0..len_b {
-        matrix[0][i+1] = matrix[0][i] + 1;
+    for i in 1..len_b {
+        cur[i] = i;
     }
 
-    // calculate matrix
-    for (i, ca) in a.chars().enumerate() {
+    // calculate edit distance
+    for (i,ca) in a.chars().enumerate() {
+        // get first column for this row
+        pre = cur[0];
+        cur[0] = i + 1;
         for (j, cb) in b.chars().enumerate() {
-            let alternatives = [
+            tmp = cur[j + 1];
+            cur[j + 1] = std::cmp::min(
                 // deletion
-                matrix[i][j+1] + 1,
+                tmp + 1, std::cmp::min(
                 // insertion
-                matrix[i+1][j] + 1,
+                cur[j] + 1,
                 // match or substitution
-                matrix[i][j] + if ca == cb { 0 } else { 1 }];
-            matrix[i+1][j+1] = *alternatives.iter().min().unwrap();
+                pre + if ca == cb { 0 } else { 1 }));
+            pre = tmp;
         }
     }
-
-    matrix[len_a][len_b]
+    cur[len_b - 1]
 }
