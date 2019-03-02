@@ -18,7 +18,7 @@ In Cargo.toml add
 
 ```toml
 [dependencies]
-edit-distance = "2.0.0"
+edit-distance = "2.1.0"
 ```
 
 Then re-run `cargo build`. That fetches the dependencies and builds
@@ -36,12 +36,15 @@ edit_distance("kitten", "sitting"); // => 3
 
 1. Fork it!
 2. Create your feature branch: `git checkout -b my-new-feature`
+2. Test your changes: `cargo test`
 3. Commit your changes: `git commit -am 'Add some feature'`
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request :D
 
 ## History
 
+2019-03-02 2.1.0 Optimize memory usage  
+2018-01-02 2.0.1 Update dev-dependencies  
 2017-07-02 2.0.0  
 2015-05-01 1.0.0 Release  
 2015-04-18 0.0.1 Initial upload
