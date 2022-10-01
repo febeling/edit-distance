@@ -2,7 +2,6 @@
 # edit-distance
 
 [![Build Status](https://travis-ci.org/febeling/edit-distance.svg)](https://travis-ci.org/febeling/edit-distance)
-[![](http://meritbadge.herokuapp.com/edit-distance)](https://crates.io/crates/edit-distance)
 
 Calculate Levenshtein distance between two strings.
 
