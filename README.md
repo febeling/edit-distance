@@ -1,7 +1,7 @@
 
-# edit-distance
+[![CI](https://github.com/febeling/edit-distance/actions/workflows/rust.yml/badge.svg)](https://github.com/febeling/edit-distance/actions/workflows/rust.yml)
 
-[![Build Status](https://travis-ci.org/febeling/edit-distance.svg)](https://travis-ci.org/febeling/edit-distance)
+# edit-distance
 
 Calculate Levenshtein distance between two strings.
 
