@@ -16,7 +16,7 @@ In Cargo.toml add
 
 ```toml
 [dependencies]
-edit-distance = "2.1.1"
+edit-distance = "2.1.2"
 ```
 
 Then re-run `cargo build`. That fetches the dependencies and builds
@@ -47,6 +47,7 @@ Before sending a pull-request that goes beyond a bugfix, please open an issue to
 
 ## History
 
+2024-06-26 2.1.2 Fix formatting
 2024-06-26 2.1.1 Replace CI badge, maintenance  
 2019-03-02 2.1.0 Optimize memory usage  
 2018-01-02 2.0.1 Update dev-dependencies  
