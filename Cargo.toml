@@ -1,6 +1,6 @@
 [package]
 name = "edit-distance"
-version = "2.1.0"
+version = "2.1.1"
 authors = ["Florian Ebeling <florian.ebeling@gmail.com>"]
 
 description = "Levenshtein edit distance between strings, a measure for similarity."

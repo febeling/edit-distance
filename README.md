@@ -1,4 +1,3 @@
-
 [![CI](https://github.com/febeling/edit-distance/actions/workflows/rust.yml/badge.svg)](https://github.com/febeling/edit-distance/actions/workflows/rust.yml)
 
 # edit-distance
@@ -17,7 +16,7 @@ In Cargo.toml add
 
 ```toml
 [dependencies]
-edit-distance = "2.1.0"
+edit-distance = "2.1.1"
 ```
 
 Then re-run `cargo build`. That fetches the dependencies and builds
@@ -53,10 +52,11 @@ cargo test
 
 ## History
 
-2019-03-02 2.1.0 Optimize memory usage  
-2018-01-02 2.0.1 Update dev-dependencies  
-2017-07-02 2.0.0  
-2015-05-01 1.0.0 Release  
+2024-06-26 2.1.1 Replace CI badge, maintenance
+2019-03-02 2.1.0 Optimize memory usage
+2018-01-02 2.0.1 Update dev-dependencies
+2017-07-02 2.0.0
+2015-05-01 1.0.0 Release
 2015-04-18 0.0.1 Initial upload
 
 ## Credits
