@@ -52,11 +52,11 @@ cargo test
 
 ## History
 
-2024-06-26 2.1.1 Replace CI badge, maintenance
-2019-03-02 2.1.0 Optimize memory usage
-2018-01-02 2.0.1 Update dev-dependencies
-2017-07-02 2.0.0
-2015-05-01 1.0.0 Release
+2024-06-26 2.1.1 Replace CI badge, maintenance  
+2019-03-02 2.1.0 Optimize memory usage  
+2018-01-02 2.0.1 Update dev-dependencies  
+2017-07-02 2.0.0  
+2015-05-01 1.0.0 Release  
 2015-04-18 0.0.1 Initial upload
 
 ## Credits
