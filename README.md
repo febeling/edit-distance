@@ -16,7 +16,7 @@ In Cargo.toml add
 
 ```toml
 [dependencies]
-edit-distance = "2.1.2"
+edit-distance = "2.1.3"
 ```
 
 Then re-run `cargo build`. That fetches the dependencies and builds
@@ -41,12 +41,23 @@ cargo build
 cargo test
 ```
 
-## Contributing
+## Release
 
-Before sending a pull-request that goes beyond a bugfix, please open an issue to discuss. PRs without clear objective or separation of concerns aren't likely to be accepted.
+- change Cargo.toml version
+- change install instructions (version)
+- update History section
+- commit with version as comment
+- tag with version, then:
+
+```shell
+cargo publish
+git push
+git push --tags
+```
 
 ## History
 
+2024-09-04 2.1.3 Update dev-dependency
 2024-06-26 2.1.2 Fix formatting  
 2024-06-26 2.1.1 Replace CI badge, maintenance  
 2019-03-02 2.1.0 Optimize memory usage  
@@ -54,6 +65,10 @@ Before sending a pull-request that goes beyond a bugfix, please open an issue to
 2017-07-02 2.0.0  
 2015-05-01 1.0.0 Release  
 2015-04-18 0.0.1 Initial upload
+
+## Contributing
+
+Before sending a pull-request that goes beyond a bugfix, please open an issue to discuss. PRs without clear objective or separation of concerns aren't likely to be accepted.
 
 ## Credits
 
