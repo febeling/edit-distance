@@ -28,9 +28,9 @@
 ///
 /// edit_distance("kitten", "sitting"); // => 3
 /// ```
-pub fn edit_distance(a: &str, b: &str) -> usize {
-    let len_a = a.chars().count();
-    let len_b = b.chars().count();
+pub fn edit_distance(a: impl AsRef<str>, b: impl AsRef<str>) -> usize {
+    let len_a = a.as_ref().chars().count();
+    let len_b = b.as_ref().chars().count();
     if len_a < len_b {
         return edit_distance(b, a);
     }
@@ -53,11 +53,11 @@ pub fn edit_distance(a: &str, b: &str) -> usize {
     }
 
     // calculate edit distance
-    for (i, ca) in a.chars().enumerate() {
+    for (i, ca) in a.as_ref().chars().enumerate() {
         // get first column for this row
         pre = cur[0];
         cur[0] = i + 1;
-        for (j, cb) in b.chars().enumerate() {
+        for (j, cb) in b.as_ref().chars().enumerate() {
             tmp = cur[j + 1];
             cur[j + 1] = std::cmp::min(
                 // deletion
