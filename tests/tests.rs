@@ -97,3 +97,22 @@ fn triangle_inequality_property() {
 
     quickcheck(triangle_inequality as fn(a: String, b: String, c: String) -> bool);
 }
+
+#[test]
+fn accepts_different_string_types() {
+    let owned = String::from("kitten");
+    let borrowed = "sitting";
+    let boxed = Box::<str>::from("kitten");
+
+    assert_eq!(edit_distance::edit_distance(&owned, borrowed), 3);
+    assert_eq!(edit_distance::edit_distance(owned.clone(), borrowed), 3);
+
+    assert_eq!(edit_distance::edit_distance(&owned, borrowed), 3);
+
+    assert_eq!(edit_distance::edit_distance(boxed, "sitting"), 3);
+
+    assert_eq!(
+        edit_distance::edit_distance(String::from("Tier"), String::from("Tor")),
+        2
+    );
+}
