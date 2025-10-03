@@ -57,7 +57,7 @@ git push --tags
 
 ## History
 
-2025-10-03 2.2.0 Use edition 2021, MSRV 1.56
+2025-10-03 2.2.0 Use edition 2021, MSRV 1.56  
 2024-09-04 2.1.3 Update dev-dependency
 2024-06-26 2.1.2 Fix formatting  
 2024-06-26 2.1.1 Replace CI badge, maintenance  
